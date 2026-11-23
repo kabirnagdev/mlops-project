@@ -1,0 +1,20 @@
+
+data:
+  train_path: data/raw/train.csv
+  later_path: data/raw/later.csv
+  holdout_path: data/raw/holdout_features.csv
+
+  target: plates_sold
+  test_size: 0.20
+  random_state: 42
+
+model:
+  algorithm: random_forest
+  n_estimators: 300
+  max_depth: 12
+  min_samples_split: 4
+  min_samples_leaf: 2
+
+training:
+  experiment_name: mp033-canteen-demand
+  metric: mae
