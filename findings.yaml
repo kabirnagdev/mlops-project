@@ -1,66 +1,53 @@
-# MP033 findings
-group_id: "G090"
-problem_id: "MP033"
-
+group_id: G090
+problem_id: MP033
 data_issues:
   leaking_column:
     present: null
     column: null
-
   unit_mixup:
     present: false
     column: null
     group_value: null
     factor: null
-
   sentinel_value:
     present: true
-    column: "exam_days_left"
+    column: exam_days_left
     value: 9999
     count: 45
-
   duplicate_rows:
     present: true
     count: 27
-
   stuck_sensor:
     present: false
     column: null
     start_date: null
     end_date: null
-
   target_typos:
     present: true
     count: 7
-
   spelling_variants:
     present: true
-    column: "day_type"
+    column: day_type
     true_levels: 3
-
 tracking:
-  experiment_name: "mp033-canteen-demand"
-  best_run_id: "75efa5c58841405b8ec56bb3eed3ae37"
-  registered_model_name: "mp033-canteen-champion"
+  experiment_name: mp033-canteen-demand
+  best_run_id: 75efa5c58841405b8ec56bb3eed3ae37
+  registered_model_name: mp033-canteen-champion
   champion_version: 1
-
 monitoring:
   psi:
-    students_on_campus: null
-    menu_price_rs: null
-    temp_c: null
-    exam_days_left: null
-    special_dishes: null
-    queue_minutes_yesterday: null
-
-  most_drifted_feature: null
-
+    students_on_campus: 0.027547
+    menu_price_rs: 5.216721
+    temp_c: 0.024007
+    exam_days_left: 0.039889
+    special_dishes: 0.020351
+    queue_minutes_yesterday: 0.050321
+  most_drifted_feature: menu_price_rs
   mae_by_group:
-    'A-Block': null
-    'B-Block': null
-    'Hostel': null
-
-  worst_served_group: null
-  mae_v1_on_check: null
-  mae_v2_on_check: null
-  decision: null
+    A-Block: 96.3561
+    B-Block: 72.057
+    Hostel: 40.7204
+  worst_served_group: A-Block
+  mae_v1_on_check: 74.0864
+  mae_v2_on_check: 43.4342
+  decision: promote_v2 (improvement 41.37% >= 12.0%)
